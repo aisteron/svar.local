@@ -1,4 +1,4 @@
-import { load_toast } from "./libs";
+import { load_toast, sw } from "./libs";
 import { Ui } from "./ui";
 import { Pages } from "./pages";
 
@@ -13,4 +13,5 @@ function init(){
 
 async function bootstrap(){
 	await load_toast()
+	await sw.load()
 }

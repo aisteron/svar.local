@@ -74,6 +74,9 @@ export const sw = {
 				let style = loadCSS("/vendors/swiper/swiper-bundle.min.css")
 				onloadCSS(style, () => {
 					//console.log('%c Swiper loaded', 'color: #666')
+					const load_event = new CustomEvent("swiper_loaded",{detail:{}})
+					
+					document.dispatchEvent(load_event)
 					resolve(true)
 				})
 			}

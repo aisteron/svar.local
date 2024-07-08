@@ -1,6 +1,8 @@
 header
-	a(href="/")
-		img(src="/assets/img/icons/logo.svg" width="217" height="51")
+	a.logo(href="/")
+		picture
+			source(media="(max-width: 710px)" srcset="/assets/img/icons/l.svg")
+			img(src="/assets/img/icons/logo.svg" width="217" height="51")
 	ul.nav
 		li.tel
 			a(href="tel:+79917073246")
@@ -32,6 +34,10 @@ header
 				img(src="/assets/img/icons/wa.png" width="33" height="33")
 			a.tg(href="tg://resolve?domain=svarkontrol ")
 				img(src="/assets/img/icons/tg.png" width="33" height="33")
+	#nav-icon1
+		span
+		span
+		span
 ul.nav.main.mt1
 	li.active
 		a(href="/") Главная

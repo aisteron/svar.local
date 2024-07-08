@@ -4,10 +4,30 @@ header
 	align-items: center
 	justify-content: space-between
 	margin-top: 1rem
+	@media(max-width:710px)
+		border-bottom: 1px solid $border_blue
+		padding-bottom: 10px !important
+		a.logo
+			align-self: baseline
+			min-width: 76px
+			height: 41px
+			margin-right: 0
+			img
+				width: 76px
+				height: 41px
+		#nav-icon1
+			align-self: flex-start
+			margin-top: 5px
+	a.logo
+		display: block
+		min-width: 217px
+		margin-right: 1rem
 	ul.nav
 		display: grid
 		grid-template-columns: 231px 1fr
 		gap: 7px
+		@media(max-width:710px)
+			grid-template-columns: 1fr
 		li
 			font-weight: 500
 			&.tel
@@ -16,13 +36,27 @@ header
 			&.mail
 				grid-column: 1
 				grid-row: 2
+				@media(max-width:960px)
+					grid-row: 1
+					margin-top: 2rem
+				@media(max-width:710px)
+					display: none
 			&.addr
 				grid-column: 2
 				grid-row: 1
+				@media(max-width: 710px)
+					display: none
 			&.soc
 				grid-column: 2
 				grid-row: 2
-			&.tel a, &.mail a, &.addr		
+				@media(max-width:710px)
+					grid-column: 1
+					margin-top: 0
+					margin-left: unset
+					svg, img
+						width: 33px !important
+						height: 33px !important
+			&.tel a, &.mail a, &.addr
 				display: flex
 				gap: 1rem
 				align-items: center
@@ -30,20 +64,31 @@ header
 				text-decoration: none
 				color: $blue
 				font-size: 22px
+				@media(max-width:710px)
+					font-size: 1rem
 			&.mail a
 				text-decoration: none
-				color: $black	
+				color: $black
 			&.soc
 				display: flex
 				gap: 10px
 				margin-left: auto
 				margin-top: -7px
+				@media(max-width: 990px)
+					svg, img
+						width: 21px
+						height: 21px
+			&.addr
+				svg
+					min-width: 1rem
 ul.nav.main
 	@include pw
 	background-color: $black
 	display: flex
 	gap: 0
 	align-items: center
+	@media(max-width:710px)
+		display: none
 	li
 		&.active
 			border-bottom: 4px solid $blue
@@ -54,5 +99,76 @@ ul.nav.main
 		text-decoration: none
 		padding: 1rem 2rem
 		display: inline-block
+		@media(max-width:800px)
+			padding: 1rem 1rem
 		&:hover
 			background-color: #464B52
+footer
+	@include pw
+	padding-top: 1.5rem !important
+	padding-bottom: 45px !important
+	background-color: #32373E
+	color: #fff
+	.orgname
+		display: block
+		margin-bottom: 1rem
+	a
+		color: #fff
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+	.columns
+		display: flex
+		gap: 60px
+		ul
+			li
+				&:not(:last-child)
+					margin-bottom: 8px
+			&.tel
+				li
+					display: flex
+					align-items: center
+					gap: 1rem
+body.index-page
+	.index.swiper
+		.swiper-slide
+			img
+				border-radius: 6px
+				object-fit: cover
+			.dsc
+				position: absolute
+				left: 0
+				top: 0
+				height: 281px
+				max-width: 277px
+				width: 277px
+				background: rgba(30, 113, 217, 0.6)
+				z-index: 2
+				span
+					font-size: 20px
+					font-weight: 500
+					color: #fff
+					text-transform: uppercase
+					position: absolute
+					top: 54px
+					left: 37px
+					line-height: 140%
+					max-width: 200px
+				a.link
+					position: absolute
+					bottom: 0
+					right: 0
+					padding: 20px
+					background: rgba(30, 113, 217, 0.6)
+	.content
+		@include pw
+		padding-top: 1rem !important
+		background-image: url(/assets/img/pages/index/bg.avif)
+		display: flex
+		flex-direction: column
+		gap: 1rem
+		.split
+			display: flex
+			gap: 1rem
+		button.Primary
+			align-self: flex-start
