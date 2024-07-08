@@ -1,2 +1,58 @@
 header
-  @include pw
+	@include pw
+	display: flex
+	align-items: center
+	justify-content: space-between
+	margin-top: 1rem
+	ul.nav
+		display: grid
+		grid-template-columns: 231px 1fr
+		gap: 7px
+		li
+			font-weight: 500
+			&.tel
+				grid-row: 1
+				grid-column: 1
+			&.mail
+				grid-column: 1
+				grid-row: 2
+			&.addr
+				grid-column: 2
+				grid-row: 1
+			&.soc
+				grid-column: 2
+				grid-row: 2
+			&.tel a, &.mail a, &.addr		
+				display: flex
+				gap: 1rem
+				align-items: center
+			&.tel a
+				text-decoration: none
+				color: $blue
+				font-size: 22px
+			&.mail a
+				text-decoration: none
+				color: $black	
+			&.soc
+				display: flex
+				gap: 10px
+				margin-left: auto
+				margin-top: -7px
+ul.nav.main
+	@include pw
+	background-color: $black
+	display: flex
+	gap: 0
+	align-items: center
+	li
+		&.active
+			border-bottom: 4px solid $blue
+			a
+				background-color: #464B52
+	a
+		color: #fff
+		text-decoration: none
+		padding: 1rem 2rem
+		display: inline-block
+		&:hover
+			background-color: #464B52

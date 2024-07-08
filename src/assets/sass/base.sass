@@ -1,16 +1,27 @@
 @font-face
-	font-family: 'Roboto'
+	font-family: 'Inter'
 	font-style: normal
 	font-weight: 400
-	src: local('Roboto'), local('Roboto-Regular'), url('/assets/fonts/roboto-v29-latin_cyrillic-regular.woff2') format('woff2')
+	src: local('Inter'), local('Inter-Regular'), url('/assets/fonts/Inter-Regular.woff2') format('woff2')
 	font-display: block
 
 @font-face
-	font-family: 'Roboto'
+	font-family: 'Inter'
 	font-style: normal
 	font-weight: 500
-	src: local('Roboto Medium'), local('Roboto-Medium'), url('/assets/fonts/roboto-v29-latin_cyrillic-500.woff2') format('woff2')
+	src: local('Inter Medium'), local('Inter-Medium'), url('/assets/fonts/Inter-Medium.woff2') format('woff2')
 	font-display: block
+
+@font-face
+	font-family: 'Exo2'
+	font-style: normal
+	font-weight: 600
+	src: local('Exo2 SemiBold'), local('Exo2-SemiBold'), url('/assets/fonts/Exo2-SemiBold.woff2') format('woff2')
+	font-display: block
+
+$blue: #1E71D9
+$black: #32373E
+$border_blue: #ADCBF1
 
 html
 	box-sizing: border-box
@@ -21,7 +32,7 @@ html
 body
 	margin: 0
 	padding: 0
-	font-family: 'Roboto', sans-serif
+	font-family: 'Inter', sans-serif
 
 ul
 	margin: 0
@@ -44,7 +55,7 @@ img, picture,svg
 .mb3
 	margin-bottom: 3rem
 
-$desktop: 1400px
+$desktop: 940px
 $notebook: 100%
 
 @mixin mw()
@@ -101,4 +112,20 @@ $notebook: 100%
 
 		&:nth-child(3)
 			top: 6px
-			transform: rotate(-135deg)		
+			transform: rotate(-135deg)
+section.notice
+	display: flex
+	gap: 1rem
+	border: 1px solid $border_blue
+	border-radius: 6px
+	padding: 10px 20px
+	align-items: center
+	.dsc
+		span
+			display: block
+			font-weight: 500
+			&:first-of-type
+				margin-bottom: 5px
+
+section#content
+	@include pw
