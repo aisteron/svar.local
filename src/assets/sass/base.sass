@@ -70,19 +70,27 @@ img, picture,svg
 	border-radius: 6px
 	padding: 32px 28px
 	padding-bottom: 1rem
+	>p:first-of-type
+		margin-top: 0
+	.h + p
+		margin-top: 1rem	
 	a
 		color: $blue
 		&:hover
 			text-decoration: none
 ul.dot
+	padding-left: 1rem
 	li
 		font-size: 15px
+		position: relative
 		&:not(:last-child)
 			margin-bottom: 4px
 		&:before
 			content: "\2022"
 			color: $blue
 			margin-right: 7px
+			position: absolute
+			left: -1rem
 		a
 			color: $blue
 			&:hover
@@ -172,14 +180,43 @@ section.notice
 	border-radius: 6px
 	padding: 10px 20px
 	align-items: center
+	svg
+		min-width: 18px
 	.dsc
 		span
 			display: block
 			font-weight: 500
 			&:first-of-type
 				margin-bottom: 5px
+	@media(max-width:480px)
+		margin: 0 -1rem
+		border-radius: 0
+		border-right: 0
+		border-left: 0
+		border-top: 0
 section#content
 	@include pw
+	min-height: 70vh
+	min-height: calc(100vh - 373px)
+nav.bread
+	ol
+		padding-left: 0
+		list-style: none
+		display: flex
+		align-items: center
+		gap: 1rem
+		li
+			a
+				text-decoration: none
+				color: $black
+				&:hover
+					text-decoration: underline
+			&:last-child
+				color: #868686
+			&:not(:last-child)
+				&:after
+					content: "/"
+					margin-left: 1rem
 #prodlist
 	h2
 		text-transform: uppercase
@@ -244,3 +281,27 @@ section#content
 					font-size: 14px
 					font-weight: 500
 					font-family: Inter
+			@media(max-width:480px) // .item
+				width: 100%
+				display: flex
+				gap: 1rem
+				border: none
+				align-items: flex-start
+				>img
+					width: 90px
+					height: 90px
+					border: 1px solid $border_blue
+					border-radius: 3px
+				.dsc
+					border: none
+					gap: 10px
+					grid-template-columns: 1fr
+					padding: 0
+					height: 90px
+					a
+						grid-column: 1
+					button
+						display: none	
+				&:hover // .item
+					.dsc
+						background-color: #fff		

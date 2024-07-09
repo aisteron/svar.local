@@ -89,6 +89,15 @@ ul.nav.main
 	align-items: center
 	@media(max-width:710px)
 		display: none
+		&.open
+			display: flex
+			margin-top: 0
+			flex-direction: column
+			align-items: flex-start
+			padding-top: 2rem
+			padding-bottom: 2rem
+			li
+				display: inline-block
 	li
 		&.active
 			border-bottom: 4px solid $blue
@@ -120,6 +129,9 @@ footer
 	.columns
 		display: flex
 		gap: 60px
+		@media(max-width: 830px)
+			flex-wrap: wrap
+			gap: 2rem
 		ul
 			li
 				&:not(:last-child)
@@ -129,9 +141,20 @@ footer
 					display: flex
 					align-items: center
 					gap: 1rem
+					&:first-of-type
+						svg
+							min-width: 15px
+					&:last-of-type
+						svg
+							min-width: 19px
 body.index-page
 	.index.swiper
+		@media(max-width:480px)
+			display: none
 		.swiper-slide
+			position: relative
+			&.hidden
+				display: none
 			img
 				border-radius: 6px
 				object-fit: cover
@@ -139,11 +162,13 @@ body.index-page
 				position: absolute
 				left: 0
 				top: 0
-				height: 281px
+				height: 282px
 				max-width: 277px
 				width: 277px
 				background: rgba(30, 113, 217, 0.6)
 				z-index: 2
+				border-top-left-radius: 6px
+				border-bottom-left-radius: 6px
 				span
 					font-size: 20px
 					font-weight: 500
@@ -163,12 +188,60 @@ body.index-page
 	.content
 		@include pw
 		padding-top: 1rem !important
-		background-image: url(/assets/img/pages/index/bg.avif)
 		display: flex
 		flex-direction: column
 		gap: 1rem
+		@media(min-width:860px)
+			background-image: url(/assets/img/pages/index/bg.avif)
+
 		.split
 			display: flex
 			gap: 1rem
+			@media(max-width:710px)
+				flex-wrap: wrap
 		button.Primary
 			align-self: flex-start
+		@media(max-width: 480px) // .content
+			gap: 0
+			.Box
+				border: none
+				margin: 0 -1rem
+				border-radius: 0
+				&:first-of-type
+					border-top: 1px solid $border_blue
+				&:not(:last-child)
+					border-bottom: 1px solid $border_blue
+			.split
+				gap: 0
+				border-bottom: 1px solid $border_blue
+				.Box
+					border: none
+			button.Primary
+				margin-top: 1rem		
+body.prodlist-page
+	#prodlist
+		margin-bottom: 1rem			
+body.services-page
+	section#content
+		.banner
+			img
+				object-fit: cover
+				border-radius: 6px
+				@media(max-width: 480px)
+					display: none
+body.contacts-page
+	.content
+		display: flex
+		gap: 1rem
+		iframe
+			border-radius: 6px
+			border: 1px solid $border_blue
+		.Box
+			min-width: 460px
+			.tel
+				display: flex
+				gap: 1rem
+				ul
+					display: flex
+					gap: 7px
+

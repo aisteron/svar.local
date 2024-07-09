@@ -1,4 +1,4 @@
-import { qs } from "../libs"
+import { qs, qsa } from "../libs"
 
 export function Pages(){
 	
@@ -10,7 +10,12 @@ function index_page_swiper(){
 	const iswiper = qs('.index.swiper')
 	if(!iswiper) return
 
-	document.listen('swiper_loaded', e => {
+	document.listen('swiper_loaded', async e => {
+		
+		await new Promise(resolve => setTimeout(()=>resolve(), 2000))
+		
+		qsa('.index.swiper .swiper-slide.hidden').forEach(el=> el.classList.remove('hidden'))
+		
 		const options = {
 			spaceBetween: 30,
 			centeredSlides: true,
