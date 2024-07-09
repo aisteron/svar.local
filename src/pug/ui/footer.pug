@@ -1,7 +1,6 @@
 footer
 	.scripts-area
 	span.orgname ООО "Арвил"
-
 	.columns
 		ul
 			li 214019
@@ -27,7 +26,19 @@ footer
 					<path d="M9.40915 0.90918L17.6364 5.81827C17.9091 5.98494 18.1213 6.21221 18.2728 6.50009C18.4243 6.78797 18.5001 7.091 18.5001 7.40918V17.2728C18.5001 17.7728 18.322 18.2008 17.966 18.5569C17.6099 18.913 17.1819 19.091 16.6819 19.091H2.13642C1.63642 19.091 1.20839 18.913 0.852328 18.5569C0.496268 18.2008 0.318237 17.7728 0.318237 17.2728V7.40918C0.318237 7.091 0.393995 6.78797 0.54551 6.50009C0.697025 6.21221 0.909146 5.98494 1.18187 5.81827L9.40915 0.90918ZM9.40915 11.5001L16.5001 7.27282L9.40915 3.04554L2.31824 7.27282L9.40915 11.5001ZM9.40915 13.6365L2.13642 9.27282V17.2728H16.6819V9.27282L9.40915 13.6365Z" fill="white" />
 				</svg>
 				a(href="mailto:mail@svarkontrol.ru?subject=Заказ") mail@svarkontrol.ru
+	dialog#formOrder()
+		.head
+			span.title Получить счет
+			button.close
+				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z" fill="#1E71D9" />
+				</svg>
+		form.body
+			input(type="text" required maxlength="20" placeholder="Ваше имя")
+			input(type="tel" required maxlength="30" placeholder="Ваш телефон")
+			input(type="email" required maxlength="30" placeholder="Ваша электронная почта")
+			textarea(placeholder="Сообщение")
+			button.Primary.mt1(type="submit") Отправить
 
-				
-			
+
 

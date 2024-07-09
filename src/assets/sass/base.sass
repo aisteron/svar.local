@@ -73,7 +73,7 @@ img, picture,svg
 	>p:first-of-type
 		margin-top: 0
 	.h + p
-		margin-top: 1rem	
+		margin-top: 1rem
 	a
 		color: $blue
 		&:hover
@@ -301,7 +301,84 @@ nav.bread
 					a
 						grid-column: 1
 					button
-						display: none	
+						display: none
 				&:hover // .item
 					.dsc
-						background-color: #fff		
+						background-color: #fff
+dialog#formOrder
+	position: fixed
+	top: 10vh
+	border: none
+	z-index: 10
+	padding: 0
+	width: 606px
+	border: 1px solid $border_blue
+	border-radius: 6px
+	@media(max-width: 660px)
+		width: 90vw
+	@media(max-width: 480px)
+		.head
+			padding-left: 1rem
+		form.body
+			padding: 1rem
+	&:focus
+		outline: none
+	.head
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 10px 1rem
+		padding-left: 40px
+		background-color: #EBF4FD
+		border-top-left-radius: 5px
+		border-top-right-radius: 5px
+		.title
+			color: $blue
+			font-size: 1rem
+			font-weight: 500
+		button.close
+			background-color: transparent
+			cursor: pointer
+			border: none
+			&:hover
+				svg
+					path
+						fill: red
+	form.body
+		display: flex
+		flex-direction: column
+		gap: 10px
+		padding: 40px
+		padding-bottom: 1rem
+		input
+			font-family: Inter
+			font-size: 14px
+			color: $blue
+			border: none
+			border-bottom: 1px solid #ABCAF1
+			padding: 10px 1rem
+			&:focus, &:valid
+				background-color: #EBF4FD
+				outline: none
+			&::placeholder
+				font-family: inherit
+				font-size: inherit
+				color: rgba(30, 113, 217, 0.8)
+		textarea
+			resize: none
+			border: 1px solid $border_blue
+			border-radius: 6px
+			font-family: Inter
+			font-size: 14px
+			padding: 10px 1rem
+			height: 100px
+			margin-top: 22px
+			&::placeholder
+				font-size: inherit
+				font-family: inherit
+				color: rgba(30, 113, 217, 0.8)
+			&:focus
+				background-color: #EBF4FD
+				outline: none
+		button.Primary
+			align-self: flex-start
