@@ -34,10 +34,10 @@ footer
 					<path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z" fill="#1E71D9" />
 				</svg>
 		form.body
-			input(type="text" required maxlength="20" placeholder="Ваше имя")
-			input(type="tel" required maxlength="30" placeholder="Ваш телефон")
-			input(type="email" required maxlength="30" placeholder="Ваша электронная почта")
-			textarea(placeholder="Сообщение")
+			input(type="text" required maxlength="20" placeholder="Ваше имя" name="name")
+			input(type="tel" required maxlength="30" placeholder="Ваш телефон" name="phone")
+			input(type="email" required maxlength="30" placeholder="Ваша электронная почта" name="email")
+			textarea(placeholder="Сообщение" name="message")
 			button.Primary.mt1(type="submit") Отправить
 
 
