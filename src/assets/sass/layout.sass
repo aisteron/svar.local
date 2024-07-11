@@ -233,11 +233,15 @@ body.contacts-page
 	.content
 		display: flex
 		gap: 1rem
+		@media(max-width:960px)
+			flex-wrap: wrap
 		iframe
 			border-radius: 6px
 			border: 1px solid $border_blue
 		.Box
 			min-width: 460px
+			@media(max-width: 512px)
+				min-width: 100%
 			.tel
 				display: flex
 				gap: 1rem
@@ -279,7 +283,9 @@ body.prod-page
 				ul
 					li
 						font-size: 14px
-
+						&:last-of-type
+							a
+								border-bottom: none
 						&:first-of-type
 							padding-top: 1rem
 							a
