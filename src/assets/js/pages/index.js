@@ -72,8 +72,10 @@ function dialog_open_close(){
 	qs('.index-page') && arr.push(qs('.content button.Primary'))
 	qs('.prod-page') && arr.push(qs('.row .Primary'))
 
+	qsa('.orderModal').forEach(el => arr.push(el))
+
 	arr.forEach(el => {
-		el.listen("click", e => {
+		el?.listen("click", e => {
 			dialog.showModal()
 		})
 	})

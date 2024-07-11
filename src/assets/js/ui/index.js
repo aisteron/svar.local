@@ -6,7 +6,7 @@ export function Ui(){
 	open_mobile_menu()
 
 	// красим пункт меню "Услуги" для Hugo
-	colorize_service_menu_item()
+	//colorize_service_menu_item()
 }
 
 function open_mobile_menu(){

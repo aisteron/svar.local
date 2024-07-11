@@ -64,6 +64,13 @@ img, picture,svg
 	font-size: 20px
 .b
 	font-weight: 500
+.orderModal
+	font-weight: 500
+	color: $blue
+	text-decoration: underline
+	cursor: pointer
+	&:hover
+		text-decoration: none
 .Box
 	background-color: #fff
 	border: 1px solid $border_blue
@@ -341,6 +348,8 @@ dialog#formOrder
 			background-color: transparent
 			cursor: pointer
 			border: none
+			&:focus
+				outline: none
 			&:hover
 				svg
 					path
